@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const routes = require('./routes');
 
 
@@ -12,6 +13,7 @@ mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-d54bn.mongodb.net/w
     useNewUrlParser: true,
  });
 
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
